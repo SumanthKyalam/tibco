@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rest
+spec:
+  replicas: 2
+  selector:
+    name: restsample
+    app: demo
+  template:
+    metadata:
+      name: restsample
+      labels:
+        name: restsample
+        app: demo
+    spec:
+      containers:
+      - name: restsample
+        image: kyalam/restsample:rest
+        ports:
+        - containerPort: 8099

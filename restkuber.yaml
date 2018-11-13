@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rest
+  labels:
+    name: restsample
+  namespace: default
+spec:
+  containers:
+    - name: restsample
+      image: kyalam/restsample:rest
+      ports:
+        - containerPort: 8099
+          name: http
+          protocol: TCP
